@@ -79,10 +79,16 @@ button.button {
 
         &:hover {
          transform: translateY(-1rem);
+        }
+    }
 
-            .link-icons {
-                transform: translateX(1.5rem);
-            }
+    &.disabled {
+        opacity: 0.4;
+        cursor: default;
+
+        &:hover {
+            transform: translateY(0);
+
         }
     }
 
