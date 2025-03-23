@@ -1,0 +1,107 @@
+
+/*!
+ *SCSS custom mixin
+ * By Go2People - https://go2people.nl/
+ * Copyright 2011-2024 Go2People.
+ * Licensed under MIT (https://github.com/sass/dart-sass/blob/main/LICENSE)
+ */
+
+// CSS vars cannot be used directly inside SASS mixins (for media queries), so we define those as SASS vars.
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1440px;
+$breakpoint-4k: 2560px;
+
+
+@mixin respond-to($media) {
+
+    // Exclusively the requested breakpoint
+    @if $media == only-xs {
+        @media screen and (min-width: 0) and (max-width: $breakpoint-sm - 1) {
+            @content;
+        }
+    } @else if $media == only-sm {
+        @media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md - 1) {
+            @content;
+        }
+    } @else if $media == only-md {
+        @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg - 1) {
+            @content;
+        }
+    } @else if $media == only-lg {
+        @media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
+            @content;
+        }
+    } @else if $media == only-xl {
+        @media screen and (min-width: $breakpoint-xl) {
+            @content;
+        }
+    } @else if $media == only-xxl {
+        @media screen and (min-width: $breakpoint-xxl) {
+            @content;
+        }
+    }
+
+        // Up to and including the requested breakpoint
+    @else if $media == up-to-xs {
+        @media screen and (max-width: $breakpoint-sm - 1) {
+            @content;
+        }
+    } @else if $media == up-to-sm {
+        @media screen and (max-width: $breakpoint-md - 1) {
+            @content;
+        }
+    } @else if $media == up-to-md {
+        @media screen and (max-width: $breakpoint-lg - 1) {
+            @content;
+        }
+    } @else if $media == up-to-lg {
+        @media screen and (max-width: $breakpoint-xl - 1) {
+            @content;
+        }
+    } @else if $media == up-to-xl {
+        @media screen and (max-width: $breakpoint-xxl - 1) {
+            @content;
+        }
+    }
+
+        // Starting at the requested breakpoint
+    @else if $media == from-sm {
+        @media screen and (min-width: $breakpoint-sm) {
+            @content;
+        }
+    } @else if $media == from-md {
+        @media screen and (min-width: $breakpoint-md) {
+            @content;
+        }
+    } @else if $media == from-lg {
+        @media screen and (min-width: $breakpoint-lg) {
+            @content;
+        }
+    } @else if $media == from-xl {
+        @media screen and (min-width: $breakpoint-xl) {
+            @content;
+        }
+    } @else if $media == from-xxl {
+        @media screen and (min-width: $breakpoint-xxl) {
+            @content;
+        }
+    }
+
+    @else if $media == fine {
+
+        @media (pointer: fine), (-ms-high-contrast:none) {
+            @content;
+        }
+    }
+
+    @else if $media == coarse {
+
+        @media (pointer: coarse) {
+            @content;
+        }
+    }
+}
+

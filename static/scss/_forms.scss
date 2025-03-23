@@ -1,0 +1,60 @@
+@use 'helpers/mixins' as *;
+@use 'helpers/variables' as *;
+
+label {
+    font-weight: normal;
+    margin-top: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+    background: #fff none;
+    border: .1rem solid var(--border);
+    border-radius: .5rem;
+    color: var(--text);
+    display: block;
+    font-size: 1.6rem;
+    height: 3.5rem;
+    padding: .5rem 1rem;
+    vertical-align: middle;
+    width: 100%;
+}
+
+input:disabled {
+    background: var(--disabled);
+    cursor: default;
+}
+
+textarea {
+    height: 12.5rem;
+    max-width: 100%;
+    min-height: 12.5rem;
+}
+
+button[type="button"],
+input[type="submit"] {
+    background: #fff none;
+    border: .1rem solid var(--border);
+    border-radius: .5rem;
+    color: var(--text);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: .5rem 1rem;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover {
+        color: #333;
+        background-color: #ebebeb;
+        border: .1rem solid #adadad;
+    }
+}
