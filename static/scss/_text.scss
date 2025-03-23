@@ -63,6 +63,8 @@ button.button {
     border-radius: 1.1rem;
     font-weight: 700;
     transition: all var(--duration) ease-in-out;
+    transform: translateY(0);
+
 
     @include respond-to(from-md) {
         width: 100%;
@@ -76,7 +78,7 @@ button.button {
         min-width: 25rem;
 
         &:hover {
-            background: var(--hover);
+         transform: translateY(-1rem);
 
             .link-icons {
                 transform: translateX(1.5rem);
@@ -84,29 +86,7 @@ button.button {
         }
     }
 
-    &.secondary {
-        color: var(--primary);
-        background: var(--background);
-        border: .2rem solid var(--primary);
 
-        &:hover {
-            color: var(--hover);
-            border: .2rem solid var(--hover);
-        }
-    }
-    
-    &.small-btn {
-        background: var(--primary);
-        border-color: var(--primary);
-        width: auto;
-        &:hover {
-            background: var(--hover);
-
-            .link-icons {
-                transform: translateX(1.5rem);
-            }
-        }
-    }
 }
 
 .go-to-top-btn {
